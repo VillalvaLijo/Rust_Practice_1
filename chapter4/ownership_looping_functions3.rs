@@ -69,8 +69,14 @@ fn main(){
     //same integer types in order to add them together.
 
     let mut y: i32 = 100;
+    
+    println!("Data type of y before add_hundred: {}", type_of(&y));
+    println!("Value of y before calling add_hundred: {}", y);
+    //let y = add_hundred(&mut y);
 
-    let y = add_hundred(&mut y);
+    let yref = &mut y;
+    println!("Data type of yref: {}", type_of(&yref));
+    let mut y = add_hundred(yref);
 
     //println!("Value of y after adding a hundred: {}", y);
 
