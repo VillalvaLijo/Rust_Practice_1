@@ -19,11 +19,27 @@ fn main() {
     //}
     //Tuple's are not iterable so this code didn't work
 
-    for number in (0..2).rev(){
+    //for number in (0..2).rev(){
         //println!("The value of element {} in the tuple is: {}",number, tup.number);
-        println!("The value of number is {}", number);
-        println!("The data typf of number is {}", type_of(number));
+    //    println!("The value of number is {}", number);
+    //    println!("The data typf of number is {}", type_of(number));
+    //}
+
+    println!("First element in the Tuple: {}", tup.0);
+    println!("Data type of first element in the tuple: {}", type_of(tup.0));
+    println!("Data type of tup: {}", type_of(tup));
+
+    let months = ["January", "February", "March", "April", "May", "June", "July",
+              "August", "September", "October", "November", "December"];
+    
+    let mut count = 0;
+
+    while count != 12{
+        println!("{}", months[count]);
+        count += 1;
     }
+
+   
 }
 
 fn type_of<T>(_: T) ->&'static str {
