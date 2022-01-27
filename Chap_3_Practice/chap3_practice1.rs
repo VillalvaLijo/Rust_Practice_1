@@ -33,9 +33,31 @@ fn main(){
     io::stdin()
         .read_line(&mut user_input_float)
         .expect("Failed to read line");
-
+    
+    let uif2 = user_input_float.clone();
+    
     println!("You entered: {}", user_input_float);
-    println!("Type of what you entered: {}", type_of(user_input_float));
+    //println!("Type of what you entered: {}", type_of(uif2));
+
+    //println!("Type of float you entered: {}", type_name::uif2);    
+    //this doesn't work, gives error: use of undeclared crate or module, type_name,
+    //which doens't make any sense becasue I declare it in the other function
+
+    //println!("Type of float you entered: {}", std::any::type_name::uif2); 
+    //this doens't work either, it says expected type at any:: but got a function, type_name
+
+    //println!("Type of float you entered: {}", any::type_name::uif2);
+    //says use of of undeclared crate or module, any
+    //werid!
+
+    //println!("Type of float you entered: {}", std::any.type_name(uif2));
+    //Doesn't work either
+
+    let user_input_float: f64 = user_input_float.trim().parse().expect("Please type a number!");
+
+    println!("Your input float after parsing: {}", user_input_float);
+    println!("Your input float data type after parsing: {}", type_of(user_input_float));
+
 }
 
 fn type_of<T>(_: T) ->&'static str {
